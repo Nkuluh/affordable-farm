@@ -43,7 +43,13 @@
     <h2>About Us</h2>
     <p class="bodytext">Welcome to Affordable Farm, your one-stop shop for all your farming needs. We offer a wide range of products and services to help you grow your own food and livestock. Our team of experts is dedicated to providing you with the best possible experience.</p>
     <h2>Available Fruits & Veg</h2>
-    <p lass="bodytext">todo</p>
+      
+    <p lass="bodytext">
+      {% for fruit in fruits %}
+        {% include 'fruititem.html' %}
+      {% endfor %}
+    </p>
+      
     <div style="text-align:center;">
       <button class="btn btn-primary btn-lg">Contact Us</button>
       <p class="mt-4">Copyright 2024, Affordable Farm</p>
