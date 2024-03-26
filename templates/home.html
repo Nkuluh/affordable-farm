@@ -2,58 +2,45 @@
 <html>
   <head>
     <title>Affordable Farm</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <style>
-      h1 {
-        font-size:40px;
-        font-family:Roboto;
-        font-weight:normal;
-        color: rgb(50, 50, 50);
-        text-align:center;
-      }
-
       #banner {
-        width: 100%;
         height: 360px;
-        object-fit: cover;
+        width: 100%;
+        object-fit:cover;
+        margin-bottom: 16px;
       }
-
-      h2 {
-        font-family: Roboto;
-        font-weight:normal;
-        font-size: 32px;
-        color: rgb(100, 100, 100);
-        text-align:center;
-      }
-
-      .bodytext {
-        font-family: Roboto;
-        color: rgb(80, 80, 80);
-      }
-      #container {
-        max-width: 720px;
-        margin: 0 auto;
-      }
-      
     </style>
   </head>
   <body>
-    <div id= "container">
-    <h1>Affordable Farm</h1>
-    <img id="banner" src="https://28bf3f37-b4ad-4e06-a98b-794dc1f25e9a-00-1vgwl8aegfmnf.picard.replit.dev/static/banner.avif">
-    <h2>About Us</h2>
-    <p class="bodytext">Welcome to Affordable Farm, your one-stop shop for all your farming needs. We offer a wide range of products and services to help you grow your own food and livestock. Our team of experts is dedicated to providing you with the best possible experience.</p>
-    <h2>Available Fruits & Veg</h2>
-      
-    <p lass="bodytext">
-      {% for fruit in fruits %}
-        {% include 'fruititem.html' %}
-      {% endfor %}
-    </p>
-      
-    <div style="text-align:center;">
-      <button class="btn btn-primary btn-lg">Contact Us</button>
-      <p class="mt-4">Copyright 2024, Affordable Farm</p>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="https://28bf3f37-b4ad-4e06-a98b-794dc1f25e9a-00-1vgwl8aegfmnf.picard.replit.dev/static/fru.avif" >
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">
+        {{company_name}} About us
+      </h1>
+      <div class="row" style="margin-bottom:32px">
+        <div class="col-md-6">
+      <p class="lead">
+      Welcome to Affordable Farm, your one-stop shop for all your farming needs. We offer a wide range of products and services to help you grow your own food and livestock. Our team of experts is dedicated to providing you with the best possible experience.
+      </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+        <img src="/static/banner.avif" style="height:320px;border-radius:4px;">
+        </div>
+      </div>
+      <h2 class="text-center mt-2 mb-4">Available Products</h2>
+      <div>
+        {% for fruit in fruits %}
+          {% include 'fruititem.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+      <a class="btn btn-primary btn-lg" href="mmailto:mthethwankulu0@gmail.com">Contact Us</a>
+      </div>
     </div>
-    </div>
+    {% include 'footer.html' %}
   </body>
 </html>
